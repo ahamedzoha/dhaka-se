@@ -6,11 +6,22 @@ const Main = () => {
 
   return (
     <main className="bg-[#E5E7EB]  ">
-      <div className="px-12 py-10">
+      <div className="px-7 md:px-12 py-10">
         {!data && !error && <div>Loading...</div>}
         {error && <div>Error!</div>}
         {data && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-12 md:gap-8 xl:gap-12 ">
+          <div
+            className="
+          grid 
+          grid-cols-1 
+          md:grid-cols-2 
+          lg:grid-cols-3 
+          xl:grid-cols-4 
+          2xl:grid-cols-5 
+          gap-12 
+          md:gap-8 
+          xl:gap-12"
+          >
             {data.data.map((info, index) => (
               <TickerCard key={index} data={info} />
             ))}
