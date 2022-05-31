@@ -2,7 +2,7 @@ import useSWR from "swr"
 import TickerCard from "../TickerCard"
 const Main = () => {
   const URI = `https://api.azazahamed.com/api/stocks`
-  const { data, error } = useSWR(URI)
+  const { data, error } = useSWR(URI, { refreshInterval: 2000 })
 
   return (
     <main className="bg-[#E5E7EB]  ">
