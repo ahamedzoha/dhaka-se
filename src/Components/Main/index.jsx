@@ -1,7 +1,7 @@
 import useSWR from "swr"
 import TickerCard from "../TickerCard"
 const Main = () => {
-  const URI = `https://api.azazahamed.com/api/stocks`
+  const URI = `https://api.azazahamed.com/api/v1/stocks`
   const { data, error } = useSWR(URI, { refreshInterval: 120000 })
 
   return (
