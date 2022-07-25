@@ -1,9 +1,6 @@
 import Head from "next/head"
 import React, { Fragment } from "react"
 
-/**
- * @author ahamedzoha
- */
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Fragment>

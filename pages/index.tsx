@@ -1,5 +1,7 @@
 import Head from "next/head"
-import { Fragment } from "react"
+import Image from "next/future/image"
+import { Fragment, SVGProps } from "react"
+
 import { Popover, Transition } from "@headlessui/react"
 import {
   MenuIcon,
@@ -18,6 +20,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/outline"
 import { ChevronRightIcon } from "@heroicons/react/solid"
+import CustomImage from "../components/ui/CustomImage"
 
 const navigation = [
   { name: "Product", href: "#" },
@@ -109,7 +112,7 @@ const footer_navigation = {
     {
       name: "Facebook",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -122,7 +125,7 @@ const footer_navigation = {
     {
       name: "Instagram",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -135,7 +138,7 @@ const footer_navigation = {
     {
       name: "Twitter",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
         </svg>
@@ -144,7 +147,7 @@ const footer_navigation = {
     {
       name: "GitHub",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -157,7 +160,7 @@ const footer_navigation = {
     {
       name: "Dribbble",
       href: "#",
-      icon: (props) => (
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -170,7 +173,7 @@ const footer_navigation = {
   ],
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <div className="relative bg-gray-800 overflow-hidden">
@@ -214,7 +217,7 @@ export default function Home() {
                 <div className="flex items-center justify-between w-full md:w-auto">
                   <a href="#">
                     <span className="sr-only">Workflow</span>
-                    <img
+                    <CustomImage
                       className="h-8 w-auto sm:h-10"
                       src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                       alt=""
@@ -265,7 +268,7 @@ export default function Home() {
                 <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                   <div className="px-5 pt-4 flex items-center justify-between">
                     <div>
-                      <img
+                      <CustomImage
                         className="h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                         alt=""
@@ -310,7 +313,7 @@ export default function Home() {
                       className="inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
                     >
                       <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full">
-                        We're hiring
+                        We&apos;re hiring
                       </span>
                       <span className="ml-4 text-sm">
                         Visit our careers page
@@ -337,21 +340,21 @@ export default function Home() {
                     <div className="mt-5 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-start justify-between">
                         <div className="flex justify-center px-1">
-                          <img
+                          <CustomImage
                             className="h-9 sm:h-10"
                             src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
                             alt="Tuple"
                           />
                         </div>
                         <div className="flex justify-center px-1">
-                          <img
+                          <CustomImage
                             className="h-9 sm:h-10"
                             src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
                             alt="Workcation"
                           />
                         </div>
                         <div className="flex justify-center px-1">
-                          <img
+                          <CustomImage
                             className="h-9 sm:h-10"
                             src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
                             alt="StaticKit"
@@ -616,7 +619,7 @@ export default function Home() {
         <div className="h-80 w-full absolute bottom-0 xl:inset-0 xl:h-full">
           <div className="h-full w-full xl:grid xl:grid-cols-2">
             <div className="h-full xl:relative xl:col-start-2">
-              <img
+              <CustomImage
                 className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
                 src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
                 alt="People working on laptops"
@@ -670,10 +673,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <img
+              <Image
                 className="h-10"
                 src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
                 alt="Company name"
+                width={40}
+                height={60}
               />
               <p className="text-gray-500 text-base">
                 Making the world a better place through constructing elegant

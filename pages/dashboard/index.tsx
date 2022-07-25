@@ -12,6 +12,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
+import Image from "next/image"
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -27,11 +28,11 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default () => {
+const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -84,9 +85,10 @@ export default () => {
                 </div>
               </Transition.Child>
               <div className="flex-shrink-0 flex items-center px-4">
-                <img
+                <Image
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                  layout="fill"
                   alt="Workflow"
                 />
               </div>
@@ -130,9 +132,10 @@ export default () => {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex-1 flex flex-col min-h-0 bg-gray-800">
           <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <img
+            <Image
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+              layout="fill"
               alt="Workflow"
             />
           </div>
@@ -209,9 +212,10 @@ export default () => {
                 <div>
                   <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <span className="sr-only">Open user menu</span>
-                    <img
+                    <Image
                       className="h-8 w-8 rounded-full"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      layout="fill"
                       alt=""
                     />
                   </Menu.Button>
@@ -268,3 +272,5 @@ export default () => {
     </div>
   )
 }
+
+export default Dashboard
