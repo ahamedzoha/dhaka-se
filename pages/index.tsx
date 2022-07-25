@@ -1,33 +1,19 @@
-import Head from "next/head"
-import Image from "next/future/image"
-import { Fragment, SVGProps } from "react"
+import { SVGProps } from "react"
 
-import { Popover, Transition } from "@headlessui/react"
 import {
-  MenuIcon,
-  XIcon,
   GlobeAltIcon,
   LightningBoltIcon,
   MailIcon,
   ScaleIcon,
-  ChatAltIcon,
-  DocumentReportIcon,
-  HeartIcon,
-  InboxIcon,
-  PencilAltIcon,
-  ReplyIcon,
-  TrashIcon,
-  UsersIcon,
 } from "@heroicons/react/outline"
 import { ChevronRightIcon } from "@heroicons/react/solid"
 import CustomImage from "../components/ui/CustomImage"
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-]
+import photo from "../public/assets/images/photo.webp"
+import statickit from "../public/assets/images/statickit-logo-gray-400.svg"
+import tuple from "../public/assets/images/tuple-logo-gray-400.svg"
+import workcation from "../public/assets/images/workcation-logo-gray-400.svg"
+import workflow from "../public/assets/images/workflow-mark-gray-300.svg"
 
 const features = [
   {
@@ -207,102 +193,7 @@ export default function Home(): JSX.Element {
             />
           </svg>
         </div>
-        <div className="relative pt-6 pb-16 sm:pb-24">
-          <Popover>
-            <nav
-              className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
-              aria-label="Global"
-            >
-              <div className="flex items-center flex-1">
-                <div className="flex items-center justify-between w-full md:w-auto">
-                  <a href="#">
-                    <span className="sr-only">Workflow</span>
-                    <CustomImage
-                      className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                      alt=""
-                    />
-                  </a>
-                  <div className="-mr-2 flex items-center md:hidden">
-                    <Popover.Button className="bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
-                      <span className="sr-only">Open main menu</span>
-                      <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
-                  </div>
-                </div>
-                <div className="hidden space-x-10 md:flex md:ml-10">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="font-medium text-white hover:text-gray-300"
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <div className="hidden md:flex">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
-                >
-                  Log in
-                </a>
-              </div>
-            </nav>
-
-            <Transition
-              as={Fragment}
-              enter="duration-150 ease-out"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="duration-100 ease-in"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Popover.Panel
-                focus
-                className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-              >
-                <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                  <div className="px-5 pt-4 flex items-center justify-between">
-                    <div>
-                      <CustomImage
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                        <span className="sr-only">Close menu</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                      </Popover.Button>
-                    </div>
-                  </div>
-                  <div className="px-2 pt-2 pb-3 space-y-1">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                  <a
-                    href="#"
-                    className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
-                  >
-                    Log in
-                  </a>
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
+        <div className="relative  pb-16 sm:pb-24">
           <main className="mt-16 sm:mt-24">
             <div className="mx-auto max-w-7xl">
               <div className="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -339,25 +230,28 @@ export default function Home(): JSX.Element {
                     </p>
                     <div className="mt-5 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
                       <div className="flex flex-wrap items-start justify-between">
-                        <div className="flex justify-center px-1">
+                        <div className="flex flex-row justify-center px-1">
                           <CustomImage
                             className="h-9 sm:h-10"
-                            src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
+                            src={tuple}
                             alt="Tuple"
+                            width={150}
                           />
                         </div>
                         <div className="flex justify-center px-1">
                           <CustomImage
                             className="h-9 sm:h-10"
-                            src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
+                            src={workcation}
                             alt="Workcation"
+                            width={150}
                           />
                         </div>
                         <div className="flex justify-center px-1">
                           <CustomImage
                             className="h-9 sm:h-10"
-                            src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+                            src={statickit}
                             alt="StaticKit"
+                            width={150}
                           />
                         </div>
                       </div>
@@ -621,7 +515,7 @@ export default function Home(): JSX.Element {
             <div className="h-full xl:relative xl:col-start-2">
               <CustomImage
                 className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
-                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                src={photo}
                 alt="People working on laptops"
               />
               <div
@@ -673,12 +567,11 @@ export default function Home(): JSX.Element {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <Image
+              <CustomImage
                 className="h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
+                src={workflow}
                 alt="Company name"
-                width={40}
-                height={60}
+                width={60}
               />
               <p className="text-gray-500 text-base">
                 Making the world a better place through constructing elegant

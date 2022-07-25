@@ -13,6 +13,14 @@ import {
 } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
 import Image from "next/image"
+import CustomImage from "../../components/ui/CustomImage"
+
+import photo from "../../public/assets/images/photo-1521737852567-6949f3f9f2b5.webp"
+import statickit from "../../public/assets/images/statickit-logo-gray-400.svg"
+import tuple from "../../public/assets/images/tuple-logo-gray-400.svg"
+import workcation from "../../public/assets/images/workcation-logo-gray-400.svg"
+import workflow from "../../public/assets/images/workflow-mark-gray-400.svg"
+import workflow2 from "../../public/assets/images/workflow-mark-indigo-500.svg"
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -85,10 +93,9 @@ const Dashboard = () => {
                 </div>
               </Transition.Child>
               <div className="flex-shrink-0 flex items-center px-4">
-                <Image
+                <CustomImage
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                  layout="fill"
+                  src={workflow2}
                   alt="Workflow"
                 />
               </div>
@@ -132,10 +139,9 @@ const Dashboard = () => {
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex-1 flex flex-col min-h-0 bg-gray-800">
           <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <Image
+            <CustomImage
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-              layout="fill"
               alt="Workflow"
             />
           </div>
@@ -212,10 +218,9 @@ const Dashboard = () => {
                 <div>
                   <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <span className="sr-only">Open user menu</span>
-                    <Image
+                    <CustomImage
                       className="h-8 w-8 rounded-full"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      layout="fill"
                       alt=""
                     />
                   </Menu.Button>
