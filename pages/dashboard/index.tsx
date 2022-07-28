@@ -12,14 +12,8 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 import { SearchIcon } from "@heroicons/react/solid"
-import Image from "next/image"
 import CustomImage from "../../components/ui/CustomImage"
 
-import photo from "../../public/assets/images/photo-1521737852567-6949f3f9f2b5.webp"
-import statickit from "../../public/assets/images/statickit-logo-gray-400.svg"
-import tuple from "../../public/assets/images/tuple-logo-gray-400.svg"
-import workcation from "../../public/assets/images/workcation-logo-gray-400.svg"
-import workflow from "../../public/assets/images/workflow-mark-gray-400.svg"
 import workflow2 from "../../public/assets/images/workflow-mark-indigo-500.svg"
 
 const navigation = [
@@ -40,7 +34,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ")
 }
 
-const Dashboard = () => {
+const Dashboard = ({ params, user }: { params: any; user: any }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -276,6 +270,15 @@ const Dashboard = () => {
       </div>
     </div>
   )
+}
+
+export const getStaticProps = async (context: any) => {
+  return {
+    props: {
+      user: "user",
+      params: !!context,
+    },
+  }
 }
 
 export default Dashboard
