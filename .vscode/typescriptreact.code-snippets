@@ -2,7 +2,7 @@
   //#region  //*=========== React ===========
   "import React": {
     "prefix": "ir",
-    "body": ["import * as React from 'react';"]
+    "body": ["import * as React from 'react'"]
   },
   "React.useState": {
     "prefix": "us",
@@ -12,7 +12,7 @@
   },
   "React.useEffect": {
     "prefix": "uf",
-    "body": ["React.useEffect(() => {", "  $0", "}, []);"]
+    "body": ["React.useEffect(() => {", "  $0", "}, [])"]
   },
   "React.useReducer": {
     "prefix": "ur",
@@ -29,7 +29,7 @@
   "React Functional Component": {
     "prefix": "rc",
     "body": [
-      "import * as React from 'react';\n",
+      "import * as React from 'react'\n",
       "export default function ${1:${TM_FILENAME_BASE}}() {",
       "  return (",
       "    <div>",
@@ -42,8 +42,8 @@
   "React Functional Component with Props": {
     "prefix": "rcp",
     "body": [
-      "import * as React from 'react';\n",
-      "import clsxm from '@/lib/clsxm';\n",
+      "import * as React from 'react'\n",
+      "import clsxm from '@/lib/clsxm'\n",
       "type ${1:${TM_FILENAME_BASE}}Props= {\n",
       "} & React.ComponentPropsWithoutRef<'div'>\n",
       "export default function ${1:${TM_FILENAME_BASE}}({className, ...rest}: ${1:${TM_FILENAME_BASE}}Props) {",
@@ -82,9 +82,9 @@
   "Next Pages": {
     "prefix": "np",
     "body": [
-      "import * as React from 'react';\n",
-      "import Layout from '@/components/layout/Layout';",
-      "import Seo from '@/components/Seo';\n",
+      "import * as React from 'react'\n",
+      "import Layout from '@/components/layout/Layout'",
+      "import Seo from '@/components/Seo'\n",
       "export default function ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page() {",
       "  return (",
       "    <Layout>",
@@ -104,12 +104,12 @@
   "Next API": {
     "prefix": "napi",
     "body": [
-      "import { NextApiRequest, NextApiResponse } from 'next';\n",
+      "import { NextApiRequest, NextApiResponse } from 'next'\n",
       "export default async function ${1:${TM_FILENAME_BASE}}(req: NextApiRequest, res: NextApiResponse) {",
       "  if (req.method === 'GET') {",
-      "    res.status(200).json({ name: 'Bambang' });",
+      "    res.status(200).json({ name: 'Bambang' })",
       "  } else {",
-      "    res.status(405).json({ message: 'Method Not Allowed' });",
+      "    res.status(405).json({ message: 'Method Not Allowed' })",
       "  }",
       "}"
     ]
@@ -120,7 +120,7 @@
       "export const getStaticProps = async (context: GetStaticPropsContext) => {",
       "  return {",
       "    props: {}",
-      "  };",
+      "  }",
       "}"
     ]
   },
@@ -133,7 +133,7 @@
       "      { params: { $1 }}",
       "    ],",
       "    fallback: ",
-      "  };",
+      "  }",
       "}"
     ]
   },
@@ -143,7 +143,7 @@
       "export const getServerSideProps = async (context: GetServerSidePropsContext) => {",
       "  return {",
       "    props: {}",
-      "  };",
+      "  }",
       "}"
     ]
   },
@@ -157,15 +157,15 @@
   },
   "Import useRouter": {
     "prefix": "imust",
-    "body": ["import { useRouter } from 'next/router';"]
+    "body": ["import { useRouter } from 'next/router'"]
   },
   "Import Next Image": {
     "prefix": "imimg",
-    "body": ["import Image from 'next/image';"]
+    "body": ["import Image from 'next/image'"]
   },
   "Import Next Link": {
     "prefix": "iml",
-    "body": ["import Link from 'next/link';"]
+    "body": ["import Link from 'next/link'"]
   },
   //#endregion  //*======== Nextjs ===========
 
