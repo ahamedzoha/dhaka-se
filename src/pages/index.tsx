@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import Seo from '@/components/Seo'
 
 /**
@@ -16,9 +14,8 @@ export default function HomePage() {
     <>
       <Seo templateTitle='Home' />
 
-      <main>
-        <div className='my-60'></div>
-        <h1 className='max-w-xl text-7xl'>Track the Market</h1>
+      <main className=''>
+        <h1 className='mt-60 max-w-xl text-7xl'>Track the Market</h1>
         <p className='mt-8 max-w-lg text-3xl'>
           Manage your <strong>DSE</strong> portfolio and track your investments
           in a simple and easy way.
