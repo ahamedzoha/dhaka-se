@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import * as React from 'react'
+import { useState } from 'react'
 
 import Button from '@/components/buttons/Button'
 import ArrowLink from '@/components/links/ArrowLink'
@@ -14,8 +14,8 @@ import Skeleton from '@/components/Skeleton'
 type Color = typeof colorList[number]
 
 export default function ComponentsPage() {
-  const [mode, setMode] = React.useState<'dark' | 'light'>('light')
-  const [color, setColor] = React.useState<Color>('sky')
+  const [mode, setMode] = useState<'dark' | 'light'>('light')
+  const [color, setColor] = useState<Color>('sky')
   function toggleMode() {
     return mode === 'dark' ? setMode('light') : setMode('dark')
   }

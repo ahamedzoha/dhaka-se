@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { RiAlarmWarningFill } from 'react-icons/ri'
 
 import ArrowLink from '@/components/links/ArrowLink'

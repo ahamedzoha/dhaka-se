@@ -6,10 +6,10 @@ import '@/styles/colors.css'
 
 import Layout from '@/components/layout/Layout'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider attribute='class' defaultTheme='system' enableSystem={true}>
-      <Layout>
+      <Layout router={router}>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
