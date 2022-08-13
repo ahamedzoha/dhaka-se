@@ -1,30 +1,36 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
-import { Fragment, useContext, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { Fragment, useEffect, useState } from 'react'
+import DarkModeToggle from 'react-dark-mode-toggle'
 
 import clsxm from '@/lib/clsxm'
 
 import UnstyledLink from '@/components/links/UnstyledLink'
 import NextImage from '@/components/NextImage'
 
-import { ThemeContext } from '@/contexts/theme-context'
-
-import LogoIndigoWhite from '~/svg/workflow-logo-indigo-500-mark-white-text.svg'
-import LogoIndigo500 from '~/svg/workflow-mark-indigo-500.svg'
-
-type ThemeContextType = { isDarkMode?: boolean; toggleThemeHandler: () => void }
-
 export default function Header() {
   // eslint-disable-next-line unused-imports/no-unused-vars
-  const [isAuth, setisAuth] = useState<boolean>(false)
-  const themeCtx: ThemeContextType = useContext(ThemeContext)
+  const [isAuth, setIsAuth] = useState<boolean>(false)
+  const [mounted, setMounted] = useState<boolean>(false)
+  const { resolvedTheme, setTheme } = useTheme()
+
+  const themeToggle = () => {
+    if (resolvedTheme === 'dark') {
+      setTheme('light')
+    } else {
+      setTheme('dark')
+    }
+  }
 
   const router = useRouter()
 
-  const toggleThemeHandler = (): void => {
-    themeCtx.toggleThemeHandler()
-  }
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   const guestLinks = [
     { href: '/', label: 'Home', active: router.pathname === '/' },
@@ -70,7 +76,7 @@ export default function Header() {
   ]
 
   return (
-    <Disclosure as='nav' className='bg-gray-800'>
+    <Disclosure as='nav' className='dark:bg-black'>
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -78,8 +84,9 @@ export default function Header() {
               <div className='flex items-center'>
                 <div className='flex-shrink-0'>
                   <UnstyledLink href='/'>
-                    <LogoIndigo500 className='block h-8 w-auto text-5xl lg:hidden' />
-                    <LogoIndigoWhite className='hidden text-9xl lg:block' />
+                    <h4>Stock Folio</h4>
+                    {/* <LogoIndigo500 className='block h-8 w-auto text-5xl lg:hidden' />
+                    <LogoIndigoWhite className='hidden text-9xl lg:block' /> */}
                   </UnstyledLink>
                 </div>
                 <div className='hidden sm:ml-6 sm:block'>
@@ -100,17 +107,35 @@ export default function Header() {
                 </div>
               </div>
               <div className='hidden sm:ml-6 sm:block'>
-                <div className='flex items-center'>
+                <div className='flex items-center space-x-3'>
+                  {/* Dark Mode Toggle Button */}
+                  <DarkModeToggle
+                    onChange={themeToggle}
+                    checked={resolvedTheme === 'dark' ? true : false}
+                    size='4rem'
+                  />
+
+                  {/* Notification Button */}
                   <button
                     type='button'
-                    className='mr-2 rounded bg-zinc-800 py-1 px-2 text-white dark:bg-zinc-200 dark:text-black sm:py-2.5 sm:px-5'
-                    onClick={toggleThemeHandler}
-                  >
-                    Toggle Theme
-                  </button>
-                  <button
-                    type='button'
-                    className='rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                    className='
+                    focus:ring-offset-none 
+                    
+                    rounded-full 
+                    p-1 
+                    text-gray-400 
+                    hover:text-black 
+                    focus:outline-none 
+                    focus:ring-2 
+                    focus:ring-gray-400
+                    
+                    focus:ring-offset-gray-800
+                    dark:bg-gray-800 
+                    dark:text-gray-400 
+                    dark:hover:text-white 
+                    dark:focus:ring-white 
+                    dark:focus:ring-offset-gray-800
+                    '
                   >
                     <span className='sr-only'>View notifications</span>
                     <BellIcon className='h-6 w-6' aria-hidden='true' />

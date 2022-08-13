@@ -2,9 +2,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 const defaultMeta = {
-  title: 'StockFolio | DSE',
-  siteName:
-    'StockFolio | A smarter way of maintaining your stock portfolio from Dhaka Stock Exchange',
+  title: 'StockFolio',
+  siteName: 'StockFolio',
   description:
     'StockFolio is a smarter way of maintaining your stock portfolio from Dhaka Stock Exchange. We help you to manage your stock portfolio easily and efficiently.',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */

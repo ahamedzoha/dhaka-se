@@ -16,7 +16,14 @@ export default function HomePage() {
     <>
       <Seo templateTitle='Home' />
 
-      <main></main>
+      <main>
+        <div className='my-60'></div>
+        <h1 className='max-w-xl text-7xl'>Track the Market</h1>
+        <p className='mt-8 max-w-lg text-3xl'>
+          Manage your <strong>DSE</strong> portfolio and track your investments
+          in a simple and easy way.
+        </p>
+      </main>
     </>
   )
 }
