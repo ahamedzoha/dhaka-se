@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1>📈 StockFolio</h1>
+  <p>Next.js + Tailwind CSS + TypeScript project packed with useful development features.</p>
+  
+  
+</div>
+
+## Features
+
+This repository is 🔋 battery packed with:
+
+- ⚡️ Next.js 12
+- ⚛️ React 18
+- ✨ TypeScript
+- 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
+- 💎 Pre-built Components — Components that will **automatically adapt** with brand color.
+- 🃏 Jest — Configured for unit testing
+- 📈 Absolute Import and Path Alias — Import components using `@/` prefix
+- 📏 ESLint — Find and fix problems in code, also will **auto sort** imports
+- 💖 Prettier — Format code consistently
+- 🐶 Husky & Lint Staged — Run scripts on staged files before they are committed
+- 🤖 Conventional Commit Lint — Make sure you & teammates follow conventional commit
+- ⏰ Release Please — Generate changelog by activating the `release-please` workflow
+- 👷 Github Actions — Lint code on PR
+- 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
+- 🔥 Snippets — A collection of useful snippets
+- 👀 Default Open Graph — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
+- 🗺 Site Map — Automatically generate sitemap.xml
+- 📦 Expansion Pack — Easily install common libraries, additional components, and configs
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repo
+2. Make sure node is installed and version is >16.0
+3. Run `npm install` to install all dependencies
+4. Run `npm run dev` to run in development localhost environment
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Commit Message Convention
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
