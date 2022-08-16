@@ -32,7 +32,9 @@ export default function HomePage() {
         <div className='mt-20 flex w-full  flex-wrap items-center justify-center lg:mt-40'>
           {/* Text */}
           <div className='flex flex-col justify-center lg:w-6/12'>
-            <h1 className='max-w-xl text-5xl md:text-7xl'>Track the Market</h1>
+            <h1 className='max-w-xl text-5xl md:text-7xl'>
+              Track the <span className='animated-underline'>Market</span>
+            </h1>
             <p className='mt-8 max-w-lg text-2xl md:text-3xl'>
               Manage your <strong>DSE</strong> portfolio and track your
               investments in a simple and easy way.
